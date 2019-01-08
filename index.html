@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- Favicon and Title-->
+    <title id="page-title">RVN - Top and Trending News Stories Only</title>
+    <link rel="shortcut icon" href="img/nytbadges.png">
+    
+    <!-- CSS CDNs-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- MY CSS FILE-->
+    <link rel="stylesheet" href="scss/design.css" media="all">
+	<link href="scss/bootstrap-colorpicker.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- NAVBAR THAT ONLY SHOWS UP IN MOBILE-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"><img class="img-logo" src="img/nytimeslogo-lights.png" alt="logo"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="li-popular">Most Popular</a></li>
+            <li><a class="active" id="li-top">Top Stories</a></li>
+            <li><a id="li-tech">Technology</a></li>
+            <li><a id="li-business">Business</a></li>
+            <li><a id="li-politics">Politics</a></li>
+            <li><a id="li-world">World</a></li>
+            <li><a id="li-sports">Sports</a></li>
+            <li><a id="li-fashion">Fashion</a></li>
+            <li><a id="li-travel">Travel</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- MAIN CONTENT-->
+    <div class="col-md-12 intro wow zoomOut" data-wow-delay="2.7s" align="center"><img class="img-responsive intro-img wow flipInY" src="img/nytimeslogo.png" data-wow-delay="0.3s">
+      <p class="intro-text wow fadeInUp" data-wow-delay="0.4s">RVN</p>
+      <p class="intro-loading wow fadeInUp" data-wow-delay="0.6s"><span class="fa fa-spinner fa-spin"></span>&nbsp;&nbsp;<span id="load-message"></span></p>
+    </div>
+    <div class="col-md-12 wow fadeIn" data-wow-delay="2s">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11 content">
+          <div class="col-md-12 result-tab">
+            <form><span class="material-icons">search</span>
+              <input class="form-control" id="input" placeholder="Search for articles, headlines, etc.">
+            </form>
+          </div>
+          <div class="col-md-12">
+            <p id="viewing">Viewing: <span id="view-type">Most Popular</span>&nbsp;&nbsp;|&nbsp;&nbsp; <span id="result-num">20 Results</span> <!-- <a href="#" class="btn btn-default pull-right" id="cp4">Change background color</a> --><a class="btn options pull-right" id="cp4" data-toggle="tooltip" data-placement="bottom" title="Change background color"><span class="material-icons">format_paint</span></a></p>
+			
+          </div>
+		  <div class="col-md-12" id="feed"></div>
+        </div>
+      </div>
+    </div>
+    <!-- FIXED SIDEBAR -->
+    <div class="col-md-1 sidebar wow fadeIn" data-wow-delay="3s"><a href="http://www.nytimes.com/" target="_blank"><img class="img-responsive nyt-logo img-circle" src="img/img-nyt.png"></a>
+      <hr><a class="btn options top-select" id="hot" data-toggle="tooltip" data-placement="right" title="Popular"><span class="material-icons">whatshot</span></a><a class="btn options" id="top" data-toggle="tooltip" data-placement="right" title="TopStories"><span class="material-icons">timeline</span></a>
+      <hr><a class="btn options" id="tech" data-toggle="tooltip" data-placement="right" title="Techonology"><span class="material-icons">cast</span></a><a class="btn options" id="business" data-toggle="tooltip" data-placement="right" title="Business"><span class="material-icons">business</span></a><a class="btn options" id="politics" data-toggle="tooltip" data-placement="right" title="Politics"><span class="material-icons">account_balance</span></a><a class="btn options" id="world" data-toggle="tooltip" data-placement="right" title="World"><span class="material-icons">public</span></a><a class="btn options" id="sports" data-toggle="tooltip" data-placement="right" title="Sports"><span class="material-icons">directions_bike</span></a><a class="btn options" id="fashion" data-toggle="tooltip" data-placement="right" title="Fashion"><span class="material-icons">filter_vintage</span></a><a class="btn options" id="travel" data-toggle="tooltip" data-placement="right" title="Travel"><span class="material-icons">directions_car</span></a>
+	</div>
+	
+	
+    <!-- MODAL POPUP BUTTON-->
+    <button class="btn btn-kn wow bounceInRight" data-toggle="modal" data-target="#myModal" data-wow-delay="3.1s"><span class="fa fa-clone"></span></button>
+    <!-- MODAL WINDOW-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="modal-close">×</span></button>
+            <h4 class="modal-title" id="myModalLabel"><span class="fa fa-clone"></span>  About RVN</h4>
+          </div>
+          <div class="modal-body">
+            <p class="modal-text">RVN uses <a href="http://www.nytimes.com/" target="_blank">The New York Times </a>APIs to shows you the Most Popular and Top News Stories, as well as Top stories from Techonology, Business, Politics, World, Sports, and Travel. </p>
+            <p class="modal-text">I am not the owner of the content. The rights are reserved to <a href="http://www.nytimes.com/" target="_blank">The New York Times </a>For more info, view the <a href="https://github.com/rvnf91/nyt-top-story" target="_blank">GitHub Repository.</a></p>
+          </div>
+          <div class="modal-footer"><a class="btn btn-social linkedin" href="https://id.linkedin.com/in/rifa-aulia-1baa22119" target="_blank"><span class="fa fa-linkedin"></span>  LinkedIn</a>
+		  </div>
+        </div>
+      </div>
+    </div>
+	
+    <!-- JAVASCRIPT CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!-- MY JAVSCRIPT FILE-->
+    <script src="js/feed.js"></script>
+	<script src="js/bootstrap-colorpicker.js"></script>
+  </body>
+</html>

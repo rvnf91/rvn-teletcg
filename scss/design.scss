@@ -1,0 +1,420 @@
+/* Importing Google Font */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300);
+@import url(https://fonts.googleapis.com/css?family=Lora);
+
+/* Color Declarations */
+$white: #FFF;
+$gray: #7F8C8D;
+$primary: #333;
+
+/* Declaring Variables */
+$content-background: #F2F4F6;
+$sidebar-background: $primary;
+$transparent: transparent;
+
+/* Font Properties */
+$font: Roboto;
+$thin: 100;
+$light: 300;
+$normal: 400;
+$bold: 500;
+
+/* Mixins */
+@mixin border-radius ($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin transition ($seconds) {
+    -webkit-transition: all $seconds;
+    -moz-transition: all $seconds;
+    -ms-transition: all $seconds;
+    transition: all $seconds;
+}
+@mixin brightness($percent) {
+    -webkit-filter: brightness($percent);
+    -moz-filter: brightness($percent);
+    -ms-filter: brightness($percent);
+}
+
+.font-property {
+    font-family: $font;
+    font-weight: $light;
+}
+
+/* General CSS Properties */
+body {
+    background: $content-background;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: $font;
+    font-weight: $light;
+    height: 100vh;
+}
+a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+/* Div Tags CSS */
+nav {
+    display: none;
+}
+.sidebar {
+    background: $sidebar-background;
+    height: 100vh;
+    padding-top: 20px;
+    width: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.content {
+    height: 100%;
+    overflow: hidden;
+    background: $content-background;
+    padding-top: 80px;
+}
+.result-tab {
+    background: $content-background;
+    padding: 0px 30px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+.card {
+    background: $white;
+    padding: 0;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #E1E6EB;
+    @include transition(0.5s);
+    height: 120px;
+}
+.card:hover {
+    border-color: #CED5DB;
+}
+.hideDiv {
+    display: none;
+}
+
+/* Image Tags CSS */
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+.nyt-logo {
+    width: 80px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: 2px solid #666;
+}
+#img-card {
+    display: inline;
+    float: left;
+    margin-right: 15px;
+    height: 120px;
+    width: auto;
+    @include brightness(70%);
+    @include transition(0.5s);
+}
+.card:hover #img-card {
+    @include brightness(100%);
+}
+
+/* Button Tags CSS */
+.options,
+.options:focus {
+    height: 45px;
+    width: 45px !important;
+    @include border-radius(100%);
+    background: #252525;
+    border: 1px solid $transparent;
+    margin: 6px 2px;
+    @include transition(0.5s);
+    cursor: pointer;
+    span {
+        color: #AAA;
+        padding-top: 8px;
+        @include transition(0.5s);
+        font-size: 15px;
+    }
+}
+.select,
+.options:hover,
+.top-select,
+.top-select:hover {
+    background: $white;
+    span {
+        color: $primary;
+    }
+}
+.btn-kn,
+.btn-kn:focus {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    @include border-radius(100%);
+    @include transition(0.5s);
+    outline: none;
+    box-shadow: 0px $transparent;
+    box-shadow: 2px 3px 4px #BBB;
+    background: $primary;
+    span {
+        color: $white;
+    }
+}
+.btn-kn:hover {
+    background: #444;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Text Properties CSS */
+#card-title {
+    font-weight: $normal;
+    font-family: Lora;
+    font-size: 15px;
+    padding: 14px 0px 0px 15px;
+    color: #888;
+    @include transition(0.5s);
+}
+.card:hover #card-title {
+    color: $primary;
+}
+#post-by {
+    color: $gray;
+    padding: 0px 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: $normal;
+}
+#viewing {
+    color: $gray;
+    text-transform: uppercase;
+    font-weight: $normal;
+    font-size: 13px;
+    padding: 10px 20px;
+    padding-top: 16px;
+    #result-num,
+    #view-type {
+        color: #444;
+        font-weight: $bold;
+    }
+}
+
+/* Form CSS */
+.form-control,
+.form-control:focus {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  padding: 35px 25px;
+  outline: none;
+  box-shadow: none;
+  @include border-radius(0);
+  border-bottom: 1px solid #DDD;
+  width: 88.9%;
+}
+::-webkit-input-placeholder {
+  color: #7F8C8D; 
+}
+form {
+  .material-icons {
+    font-size: 18px;
+    color: #7F8C8D;
+    position: absolute;
+    top: 25px;
+  } 
+}
+
+/* Span and Extra CSS */
+hr {
+    border-color: #444;
+}
+.line {
+  margin-top: 6px;
+  border-color: #DDD; 
+}
+.modal-hr {
+    margin: 0;
+    border-color: #EEE;
+    width: 50%;
+}
+
+/* Intro CSS */
+.intro {
+    background: $white;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    padding-top: 150px;
+    @include transition(0.5s);
+    .intro-img{
+        height: 130px;
+        margin-bottom: 0px;
+    }
+    .intro-text {
+        color: #333;
+        font-size: 30px;
+        text-align: center;
+        font-family: Lora;
+    }
+    .intro-loading {
+        color: #888;
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+/* MODAL POPUP CSS */
+.modal-dialog {
+    padding-top: 100px;
+    width: 500px;
+}
+.modal-content {
+    border-radius: 0px;
+    box-shadow: none;
+    border: none;
+}
+.modal-title {
+    color: #666;
+    font-size: 13px;
+    font-weight: $normal;
+    text-transform: uppercase;
+}
+.modal-text {
+    line-height: 28px;
+    font-size: 15px;
+    color: #777;
+    padding: 10px 5px 0px 5px;
+    padding-right: 10px;
+    font-family: Lora;
+}
+.close {
+    @include transition(0.5s);
+}
+.modal-close {
+    font-weight: $thin;
+}
+.btn-social,
+.btn-social:focus {
+    background: #EEE;
+    padding: 10px 12px;
+    border-radius: 2px;
+    color: #888;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-family: $bold;
+    @include transition(0.5s);
+}
+.linkedin:hover {
+    background: #1985BC;
+    color: $white;
+}
+.twitter:hover {
+    background: #55ACEE;
+    color: $white;
+}
+.github:hover {
+    background: #444;
+    color: $white;
+}
+.modal-body {
+    a,
+    a:focus {
+        border-bottom: 1px dotted $primary;
+        color: $primary;
+        @include transition(0.5s);
+    }
+    a:hover {
+        color: #000;
+        border-color: #000;
+    }
+}
+
+
+/* Media Query for Smaller Devices */
+@media(max-width: 999px) {
+    .intro {
+        z-index: 100;
+    }
+    .sidebar {
+        display: none;
+    }
+    .content {
+        padding-top: 50px;
+    }
+    .result-tab {
+        position: static;
+    }
+    form {
+        .material-icons {
+            top: 65px;
+        }
+    }
+    .form-control,
+    .form-control:focus {
+        padding: 25px 25px;
+        width: 100%;
+    }
+    nav {
+        display: inline;
+    }
+    .navbar {
+        z-index: 99;
+        border: none;
+        .navbar-header {
+            .navbar-brand {
+                .img-logo {
+                    height: 40px;
+                    margin-top: -10px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .navbar-toggle,
+    .navbar-toggle:focus {
+        @include transition(0.5s);
+        background: none;
+    }
+    .navbar-toggle:hover {
+        background: $primary;
+    }
+    .collapsed {
+        border-width: 1px;
+        border-color: transparent !important;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: $white;
+    }
+    .modal-dialog {
+        padding-top: 100px;
+        width: 94%;
+    }
+    #card-title {
+        font-size: 13px;
+        padding: 12px 0px 0px 10px;
+    }
+    #post-by {
+        font-size: 10px;
+    }
+    .card {
+        height: 100px;
+        padding-right: 5px;
+        overflow: hidden;
+    }
+    #img-card {
+        height: 100px;
+        margin-right: 10px;
+    }
+}

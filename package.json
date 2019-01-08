@@ -1,0 +1,25 @@
+{
+    "name": "Silicon",
+    "version": "1.0",
+    "description": "NewYorkTimes Web Client that shows you the Most Popular and Top News Stories, as well as Top stories from Techonology, Business, Politics, World, Sports, and Travel. You can also search for articles/posts easily with the instant articles search provided by NewYorkTimes.",
+    "author": "Keshav Narula <NarulaKeshav13@gmail.com>",
+    "contributors":[{
+        "name": "Keshav Narula",
+        "email": "NarulaKeshav13@gmail.com"
+    }],
+    "main": "js/feed.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NarulaKeshav/silicon"
+    },
+    "bugs": {
+        "url": "https://github.com/NarulaKeshav/silicon/issues"
+    }, 
+    "keywords": [
+        "News Feed",
+        "Top Stories",
+        "JavaScript",
+        "NewYorkTimes",
+        "Most Popular News Stories"
+    ]
+}

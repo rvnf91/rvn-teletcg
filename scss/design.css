@@ -1,0 +1,479 @@
+/* Importing Google Font */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300);
+@import url(https://fonts.googleapis.com/css?family=Lora);
+/* Color Declarations */
+/* Declaring Variables */
+/* Font Properties */
+/* Mixins */
+.font-property {
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+/* General CSS Properties */
+body {
+  background: #F2F4F6;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: Roboto;
+  font-weight: 300;
+  height: 100vh;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+/* Div Tags CSS */
+nav {
+  display: none;
+}
+
+.sidebar {
+  background: #333;
+  height: 100vh;
+  padding-top: 20px;
+  width: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.content {
+  height: 100%;
+  overflow: hidden;
+  background: #F2F4F6;
+  padding-top: 80px;
+}
+
+.result-tab {
+  background: #F2F4F6;
+  padding: 0px 30px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.card {
+  background: #FFF;
+  padding: 0;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #E1E6EB;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  height: 120px;
+}
+
+.card:hover {
+  border-color: #CED5DB;
+}
+
+.hideDiv {
+  display: none;
+}
+
+/* Image Tags CSS */
+img {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+.nyt-logo {
+  width: 80px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 15px;
+  border: 2px solid #666;
+}
+
+#img-card {
+  display: inline;
+  float: left;
+  margin-right: 15px;
+  height: 120px;
+  width: auto;
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+  -ms-filter: brightness(70%);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.card:hover #img-card {
+  -webkit-filter: brightness(100%);
+  -moz-filter: brightness(100%);
+  -ms-filter: brightness(100%);
+}
+
+/* Button Tags CSS */
+.options,
+.options:focus {
+  height: 45px;
+  width: 45px !important;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  background: #252525;
+  border: 1px solid transparent;
+  margin: 6px 2px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.options span,
+.options:focus span {
+  color: #AAA;
+  padding-top: 8px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  font-size: 15px;
+}
+
+.select,
+.options:hover,
+.top-select,
+.top-select:hover {
+  background: #FFF;
+}
+.select span,
+.options:hover span,
+.top-select span,
+.top-select:hover span {
+  color: #333;
+}
+
+.btn-kn,
+.btn-kn:focus {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  outline: none;
+  box-shadow: 0px transparent;
+  box-shadow: 2px 3px 4px #BBB;
+  background: #333;
+}
+.btn-kn span,
+.btn-kn:focus span {
+  color: #FFF;
+}
+
+.btn-kn:hover {
+  background: #444;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Text Properties CSS */
+#card-title {
+  font-weight: 400;
+  font-family: Lora;
+  font-size: 15px;
+  padding: 14px 0px 0px 15px;
+  color: #888;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.card:hover #card-title {
+  color: #333;
+}
+
+#post-by {
+  color: #7F8C8D;
+  padding: 0px 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#viewing {
+  color: #7F8C8D;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 13px;
+  padding: 10px 20px;
+  padding-top: 16px;
+}
+#viewing #result-num,
+#viewing #view-type {
+  color: #444;
+  font-weight: 500;
+}
+#viewing:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+
+/* Form CSS */
+.form-control,
+.form-control:focus {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  padding: 35px 25px;
+  outline: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #DDD;
+  width: 88.9%;
+}
+
+::-webkit-input-placeholder {
+  color: #7F8C8D;
+}
+
+form .material-icons {
+  font-size: 18px;
+  color: #7F8C8D;
+  position: absolute;
+  top: 25px;
+}
+
+/* Span and Extra CSS */
+hr {
+  border-color: #444;
+}
+
+.line {
+  margin-top: 6px;
+  border-color: #DDD;
+}
+
+.modal-hr {
+  margin: 0;
+  border-color: #EEE;
+  width: 50%;
+}
+
+/* Intro CSS */
+.intro {
+  background: #FFF;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  padding-top: 150px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.intro .intro-img {
+  height: 130px;
+  margin-bottom: 0px;
+}
+.intro .intro-text {
+  color: #333;
+  font-size: 30px;
+  text-align: center;
+  font-family: Lora;
+}
+.intro .intro-loading {
+  color: #888;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* MODAL POPUP CSS */
+.modal-dialog {
+  padding-top: 100px;
+  width: 500px;
+}
+
+.modal-content {
+  border-radius: 0px;
+  box-shadow: none;
+  border: none;
+}
+
+.modal-title {
+  color: #666;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.modal-text {
+  line-height: 28px;
+  font-size: 15px;
+  color: #777;
+  padding: 10px 5px 0px 5px;
+  padding-right: 10px;
+  font-family: Lora;
+}
+
+.close {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.modal-close {
+  font-weight: 100;
+}
+
+.btn-social,
+.btn-social:focus {
+  background: #EEE;
+  padding: 10px 12px;
+  border-radius: 2px;
+  color: #888;
+  margin-right: 5px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-family: 500;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.linkedin:hover {
+  background: #1985BC;
+  color: #FFF;
+}
+
+.twitter:hover {
+  background: #55ACEE;
+  color: #FFF;
+}
+
+.github:hover {
+  background: #444;
+  color: #FFF;
+}
+
+.modal-body a,
+.modal-body a:focus {
+  border-bottom: 1px dotted #333;
+  color: #333;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.modal-body a:hover {
+  color: #000;
+  border-color: #000;
+}
+
+
+/* Media Query for Smaller Devices */
+@media (max-width: 999px) {
+  .intro {
+    z-index: 100;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    padding-top: 50px;
+  }
+
+  .result-tab {
+    position: static;
+  }
+
+  form .material-icons {
+    top: 65px;
+  }
+
+  .form-control,
+  .form-control:focus {
+    padding: 25px 25px;
+    width: 100%;
+  }
+
+  nav {
+    display: inline;
+  }
+
+  .navbar {
+    z-index: 99;
+    border: none;
+  }
+  .navbar .navbar-header .navbar-brand .img-logo {
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 10px;
+  }
+
+  .navbar-toggle,
+  .navbar-toggle:focus {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    background: none;
+  }
+
+  .navbar-toggle:hover {
+    background: #333;
+  }
+
+  .collapsed {
+    border-width: 1px;
+    border-color: transparent !important;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFF;
+  }
+
+  .modal-dialog {
+    padding-top: 100px;
+    width: 94%;
+  }
+
+  #card-title {
+    font-size: 13px;
+    padding: 12px 0px 0px 10px;
+  }
+
+  #post-by {
+    font-size: 10px;
+  }
+
+  .card {
+    height: 100px;
+    padding-right: 5px;
+    overflow: hidden;
+  }
+
+  #img-card {
+    height: 100px;
+    margin-right: 10px;
+  }
+}
